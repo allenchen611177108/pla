@@ -5,9 +5,9 @@ name: CI
 on:
   # 對於 main branch 建立 Branch 與 Pull Request 時觸發 workflow 
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ allenchen611177108-patch-1 ]
+#  pull_request:
+#    branches: [ allenchen611177108-patch-1 ]
 
   # 允許你從 Action 頁簽上手動執行 workflow
   workflow_dispatch:

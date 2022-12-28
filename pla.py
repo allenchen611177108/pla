@@ -1,4 +1,5 @@
 from sklearn import datasets
+from func import activate_sign
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -16,12 +17,6 @@ iris_data = iris_data[['sepal length (cm)', 'petal length (cm)', 'target']]
 
 iris_data['target'] = iris_data['target'].map({'setosa':1,
                                                'versicolor':-1})
-
-def activate_sign(z):
-    if z > 0:
-        return 1
-    else:
-        return -1
 
 w = np.array([0., 0., 0.])
 error = 1
