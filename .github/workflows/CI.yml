@@ -5,7 +5,7 @@ name: CI
 on:
   # 對於 main branch 建立 Branch 與 Pull Request 時觸發 workflow 
   push:
-    branches: [ allenchen611177108-patch-1 ]
+    branches: [ "allenchen611177108-patch-1" ]
 #  pull_request:
 #    branches: [ allenchen611177108-patch-1 ]
 
@@ -25,11 +25,11 @@ jobs:
       - uses: actions/checkout@v2
 
       # 在 Runner 上使用 shell 顯示出 Hello world
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Run function
+        run: |
+          pytest -s -v ./func.py
 
       # 執行一組的指令
-      - name: Run a multi-line script
+      - name: Run pla as main
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          pytest -s -v ./pla.py
