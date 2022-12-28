@@ -24,6 +24,12 @@ jobs:
       # 在 $GITHUB_WORKSPACE 下簽出您的存儲庫，以便您的工作可以訪問它
       - uses: actions/checkout@v2
 
+      - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install flake8 pytest
+            if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
       # 在 Runner 上使用 shell 顯示出 Hello world
       - name: Run function
         run: |
