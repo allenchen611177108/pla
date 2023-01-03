@@ -21,7 +21,6 @@ jobs:
 
     # 作為 Job 的一部分，Steps 會循序執行一連串的動作
     steps:
-      # 在 $GITHUB_WORKSPACE 下簽出您的存儲庫，以便您的工作可以訪問它
       - uses: actions/checkout@v2
 
       - name: Install dependencies
