@@ -1,4 +1,5 @@
 from sklearn import datasets
+from func import Module
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,17 +18,12 @@ iris_data = iris_data[['sepal length (cm)', 'petal length (cm)', 'target']]
 iris_data['target'] = iris_data['target'].map({'setosa':1,
                                                'versicolor':-1})
 
-def activate_sign(z):
-    if z > 0:
-        return 1
-    else:
-        return -1
-
 w = np.array([0., 0., 0.])
 error = 1
 iterator = 0
 while error != 0:
     error = 0
+
     for i in range(len(iris_data)):
 
         plt.xlabel('sepal_length')
@@ -46,7 +42,7 @@ while error != 0:
             y_last_decision_boundary = (w[2]/w[1])*x_last_decision_boundary
             plt.plot(x_last_decision_boundary, y_last_decision_boundary, 'c--')
 
-        if activate_sign(np.dot(w, x)) != y:
+        if Module.activate_sign(np.dot(w, x)) != y:
             w += y*x
         print("y: " + str(y))
         print("x: " + str(x))
