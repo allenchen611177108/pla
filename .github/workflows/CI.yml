@@ -29,12 +29,12 @@ jobs:
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      # 在 Runner 上使用 shell 顯示出 Hello world
-      - name: Run function
-        run: |
-          pytest -s -v ./test_module.py
-
-      # 執行一組的指令
-#      - name: Run pla as main
+#      # 在 Runner 上使用 shell 顯示出 Hello world
+#      - name: Run function
 #        run: |
-#          pytest -s -v ./pla.py
+#          pytest -s -v ./test_module.py
+
+       執行一組的指令
+      - name: Run pla as main
+        run: |
+          pytest -s -v ./pla.py
