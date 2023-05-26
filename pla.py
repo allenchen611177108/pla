@@ -23,6 +23,7 @@ error = 1
 iterator = 0
 while error != 0:
     error = 0
+
     for i in range(len(iris_data)):
 
         plt.xlabel('sepal_length')
